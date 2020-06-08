@@ -44,6 +44,123 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": " Create a consumer group my_consumer_instance",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.kafka.v2+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"my_consumer_instance\",\n    \"format\": \"json\",\n    \"auto.offset.reset\": \"earliest\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/consumers/my_json_consumer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"my_json_consumer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscribe to consumer group",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/vnd.kafka.v2+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"topics\": [\n        \"jsontest\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/consumers/my_json_consumer/instances/my_consumer_instance/subscription",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"my_json_consumer",
+						"instances",
+						"my_consumer_instance",
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get records from json topic",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/vnd.kafka.json.v2+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/consumers/my_json_consumer/instances/my_consumer_instance/records",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"consumers",
+						"my_json_consumer",
+						"instances",
+						"my_consumer_instance",
+						"records"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
