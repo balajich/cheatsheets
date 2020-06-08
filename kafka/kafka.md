@@ -12,7 +12,7 @@
 # topics commands
 
     # create a topic
-    docker-compose ``exec broker \
+    docker-compose exec broker \
     kafka-topics --create --topic foo --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:2181
     
     # Describe a topic
@@ -50,3 +50,5 @@
 
 # References
 - https://docs.confluent.io/current/quickstart/ce-docker-quickstart.html
+# Rest proxy postman file
+Kafka-Rest-Proxy.postman_collection.json
