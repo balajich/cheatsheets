@@ -1,11 +1,14 @@
-#Start Cluster
+# Confluent Cluser
     # on branch origin/5.5.0-post
     git status
     sudo sysctl -w vm.max_map_count=262144
     sysctl -a | grep max_map_count
     cd ./cp-all-in-one/cp-all-in-one
+# Start Cluster
     docker-compose up -d --build
+# Check all the running process    
     docker-compose ps
+# Stop the cluster
     docker-compose down -v
 # UI
     http://localhost:9021/clusters
