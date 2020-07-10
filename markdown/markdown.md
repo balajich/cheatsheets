@@ -8,3 +8,10 @@ This tutorial can be accessed at https://youtu.be/fTk5oyXxP4o
 
 
 
+
+
+# Architecture
+![architecture](architecture.png "architecture")
+
+# Video
+[![MySQL Server Quick Start using Docker Compose](https://img.youtube.com/vi/PevbdsI3_o0/0.jpg)](https://www.youtube.com/watch?v=PevbdsI3_o0)
